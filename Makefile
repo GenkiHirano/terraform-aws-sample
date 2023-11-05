@@ -1,14 +1,22 @@
-init:
-	terraform init
+# TODO: Makefile整理する
 
-plan:
-	terraform plan
+# init:
+# 	terraform init
 
-apply:
-	terraform apply
+# plan:
+# 	terraform plan
 
-destroy:
-	terraform destroy
+# apply:
+# 	terraform apply
+
+# destroy:
+# 	terraform destroy
+
+# docker-compose コマンド
+# docker-compose run --rm terraform  ***
+
+build:
+	docker-compose build
 
 fmt:
 	terraform fmt -recursive

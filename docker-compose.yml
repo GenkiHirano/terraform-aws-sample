@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  terraform:
+    build: .
+    # TODO: 環境変数は後ほど入れる
+    # environment:
+    #   GOOGLE_APPLICATION_CREDENTIALS: /app/sops/dev/terraform.json
+    volumes:
+      - .:/app
+      - terraform
+volumes:
+  terraform:
