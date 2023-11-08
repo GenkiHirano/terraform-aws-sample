@@ -13,7 +13,7 @@ terraform {
     hostname     = "app.terraform.io"
 
     workspaces {
-      name = "spotbite-infra-dev"
+      name = "sample-terraform-infra-dev"
     }
   }
 }
