@@ -1,3 +1,5 @@
+ENV = dev
+
 build:
 	docker-compose build
 
@@ -13,17 +15,17 @@ stop:
 down:
 	docker-compose down
 
-# terraform-init:
-# 	docker-compose run --rm --entrypoint="terraform" terraform init
-
 terraform-fmt:
 	docker-compose run --rm --entrypoint="terraform" terraform fmt -recursive
 
-# terraform-plan:
-# 	docker-compose run --rm --entrypoint="terraform" terraform plan
+terraform-init:
+	docker-compose run --rm --entrypoint="terraform" terraform -chdir=/app/envs/${ENV} init
 
-# terraform-apply:
-# 	docker-compose run --rm --entrypoint="terraform" terraform apply
+terraform-plan:
+	docker-compose run --rm --entrypoint="terraform" terraform -chdir=/app/envs/${ENV} plan
 
-# terraform-destroy:
-# 	docker-compose run --rm --entrypoint="terraform" terraform destroy
+terraform-apply:
+	docker-compose run --rm --entrypoint="terraform" terraform -chdir=/app/envs/${ENV} apply
+
+terraform-destroy:
+	docker-compose run --rm --entrypoint="terraform" terraform -chdir=/app/envs/${ENV} destroy
