@@ -1,5 +1,11 @@
 ENV = dev
 
+init:
+	@make down
+	@make build
+	@make up
+	@make ps
+
 build:
 	docker-compose build
 
