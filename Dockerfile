@@ -4,4 +4,5 @@ WORKDIR /app
 
 COPY . .
 
-ENTRYPOINT [ "/bin/sh", "-c" ]
+ENTRYPOINT ["/bin/sh", "-c"]
+CMD ["tail -f /dev/null"]

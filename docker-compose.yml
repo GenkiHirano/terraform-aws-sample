@@ -1,12 +1,14 @@
 version: "3.8"
 services:
   terraform:
+    container_name: terraform
     build: .
-    # TODO: 環境変数は後ほど入れる
-    # environment:
-    #   GOOGLE_APPLICATION_CREDENTIALS: /app/sops/dev/terraform.json
     volumes:
       - .:/app
-      - terraform
-volumes:
-  terraform:
+    tty: true
+    stdin_open: true
+    environment:
+      TZ: ${TZ}
+      AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: ${AWS_REGION}
