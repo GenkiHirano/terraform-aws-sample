@@ -1,16 +1,14 @@
 # aws-terraform
 
-## Docker
-
-### コンテナ削除・起動・確認
-
-```shell
-make init
-```
-
 ## Terraform
 
 envには、dev、stg、prodのいずれかを入れてください
+
+### login
+
+```shell
+make terraform-login ENV=env
+```
 
 ### init
 
@@ -36,7 +34,7 @@ make terraform-apply ENV=env
 make terraform-destroy ENV=env
 ```
 
-###  fmt
+### fmt
 
 ```shell
 make terraform-fmt

@@ -9,11 +9,11 @@ terraform {
     }
   }
   cloud {
-    organization = "blueish"
+    organization = "genki-hirano-private"
     hostname     = "app.terraform.io"
 
     workspaces {
-      name = "sample-terraform-infra-dev"
+      name = "aws-terraform-dev"
     }
   }
 }
