@@ -7,8 +7,3 @@ module "vpc" {
   subnet_public_cidr  = var.subnet_public_cidr
   subnet_private_cidr = var.subnet_private_cidr
 }
-
-module "sample" {
-  source  = "app.terraform.io/genki-hirano-private/sample/aws"
-  version = "0.0.1"
-}
