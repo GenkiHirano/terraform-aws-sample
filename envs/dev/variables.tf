@@ -5,7 +5,7 @@ variable "aws_region" {
 
 variable "service" {
   type    = string
-  default = "aimoney"
+  default = "terraform-aws-sample"
 }
 
 variable "env" {

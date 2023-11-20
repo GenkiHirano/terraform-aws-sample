@@ -1,19 +1,22 @@
-ENV = dev
+include .env
 
-terraform-login:
+install:
+	tfenv install
+
+login:
 	terraform -chdir=envs/${ENV} login
 
-terraform-init:
+init:
 	terraform -chdir=envs/${ENV} init
 
-terraform-plan:
+plan:
 	terraform -chdir=envs/${ENV} plan
 
-terraform-apply:
+apply:
 	terraform -chdir=envs/${ENV} apply
 
-terraform-destroy:
+destroy:
 	terraform -chdir=envs/${ENV} destroy
 
-terraform-fmt:
+fmt:
 	terraform fmt -recursive

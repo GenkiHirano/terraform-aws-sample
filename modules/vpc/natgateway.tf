@@ -1,5 +1,5 @@
 resource "aws_eip" "natgateway" {
-  vpc   = true
+  domain = "vpc"
   count = 3
 
   tags = {
