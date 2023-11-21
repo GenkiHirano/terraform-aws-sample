@@ -7,35 +7,35 @@ envには、dev、stg、prodのいずれかを入れてください
 ### login
 
 ```shell
-make terraform-login ENV=env
+make login
 ```
 
 ### init
 
 ```shell
-make terraform-init ENV=env
+make init
 ```
 
 ### plan
 
 ```shell
-make terraform-plan ENV=env
+make plan
 ```
 
 ### apply
 
 ```shell
-make terraform-apply ENV=env
+make apply
 ```
 
 ### destroy
 
 ```shell
-make terraform-destroy ENV=env
+make destroy
 ```
 
 ### fmt
 
 ```shell
-make terraform-fmt
+make fmt
 ```

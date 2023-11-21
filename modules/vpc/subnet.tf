@@ -1,4 +1,3 @@
-# subnet (public)
 resource "aws_subnet" "public" {
   count             = 3
   vpc_id            = aws_vpc.this.id
@@ -9,7 +8,6 @@ resource "aws_subnet" "public" {
   }
 }
 
-# subnet (private)
 resource "aws_subnet" "private" {
   count             = 3
   vpc_id            = aws_vpc.this.id

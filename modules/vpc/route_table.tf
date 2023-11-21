@@ -1,11 +1,3 @@
-resource "aws_internet_gateway" "gw" {
-  vpc_id = aws_vpc.this.id
-
-  tags = {
-    Name = "${var.service}-${var.env}"
-  }
-}
-
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.this.id
 
@@ -25,7 +17,7 @@ resource "aws_route_table" "private" {
 
   route {
     cidr_block     = "0.0.0.0/0"
-    nat_gateway_id = element(aws_nat_gateway.this.*.id, count.index)
+    # nat_gateway_id = element(aws_nat_gateway.this.*.id, count.index)
   }
 
   tags = {
