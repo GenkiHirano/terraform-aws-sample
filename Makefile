@@ -20,3 +20,6 @@ destroy:
 
 fmt:
 	terraform fmt -recursive
+
+lint:
+	tflint --recursive
