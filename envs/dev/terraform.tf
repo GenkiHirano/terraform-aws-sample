@@ -6,9 +6,6 @@ terraform {
       // TODO: 環境変数で管理するように修正
       version = "~> 5.0"
       source  = "hashicorp/aws"
-      region = var.aws_region
-      access_key = "sample"
-      secret_key = "sample"
     }
 
     sops = {
