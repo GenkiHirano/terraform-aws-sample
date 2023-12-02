@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"sample","Source":"app.terraform.io/genki-hirano-private/sample/aws","Version":"0.0.1","Dir":".terraform/modules/sample"},{"Key":"vpc","Source":"../../modules/vpc","Dir":"../../modules/vpc"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"web_server","Source":"../../modules/...","Dir":""}]}

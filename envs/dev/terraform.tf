@@ -1,9 +1,14 @@
 terraform {
+  // TODO: 環境変数で管理するように修正
   required_version = "~> 1.6.3"
   required_providers {
     aws = {
+      // TODO: 環境変数で管理するように修正
       version = "~> 5.0"
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
+      region = var.aws_region
+      access_key = "sample"
+      secret_key = "sample"
     }
 
     sops = {
