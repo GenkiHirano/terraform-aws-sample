@@ -9,4 +9,5 @@ locals {
   route_table_cidr_block    = "0.0.0.0/0"
   security_group_cidr_block = "0.0.0.0/0"
   port                      = "80"
+  s3_identifiers            = ["686091726284"]
 }
