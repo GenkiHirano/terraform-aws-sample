@@ -10,10 +10,6 @@ variable "vpc_id" {
   type = string
 }
 
-variable "port" {
-  type = string
-}
-
 variable "vpc_cidr_block" {
   type = string
 }
@@ -27,9 +23,5 @@ variable "subnet_private_cidr_block" {
 }
 
 variable "route_table_cidr_block" {
-  type = string
-}
-
-variable "security_group_cidr_block" {
   type = string
 }
