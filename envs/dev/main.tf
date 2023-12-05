@@ -47,12 +47,19 @@ module "firewall_http_redirect_sg" {
   security_group_cidr_block = local.security_group_cidr_block
 }
 
-module "load_balancer_dns" {
-  source                          = "../../modules/load_balancer_dns"
+module "load_balancer" {
+  source                          = "../../modules/load_balancer"
   name                            = "${local.service}-${local.env}"
   subnet_public_ids               = module.network.subnet_public_ids
   http_security_group_id          = module.firewall_http_sg.security_group_id
   https_security_group_id         = module.firewall_https_sg.security_group_id
   http_redirect_security_group_id = module.firewall_http_redirect_sg.security_group_id
   alb_log_bucket_id               = module.storage.alb_log_bucket_id
+}
+
+module "dns" {
+  source   = "../../modules/dns"
+  domain   = local.domain
+  dns_name = module.load_balancer.alb_dns_name
+  zone_id  = module.load_balancer.zone_id
 }

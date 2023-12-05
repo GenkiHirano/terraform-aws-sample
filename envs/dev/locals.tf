@@ -10,4 +10,5 @@ locals {
   security_group_cidr_block = "0.0.0.0/0"
   port                      = "80"
   s3_identifiers            = ["582318560864"]
+  domain                    = "example-19960806.com"
 }

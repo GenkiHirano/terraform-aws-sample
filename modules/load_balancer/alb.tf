@@ -4,7 +4,7 @@ resource "aws_lb" "this" {
   internal           = false
   idle_timeout       = 60
   // 削除保護: 本番環境で誤って削除されないようにする
-  // NOTE: 検証段階では削除はしたいので、コメントアウト
+  // TODO: 検証段階では削除はしたいので、コメントアウト
   // enable_deletion_protection = true
 
   subnets = var.subnet_public_ids

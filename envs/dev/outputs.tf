@@ -22,6 +22,10 @@ output "firewall_http_redirect_sg" {
   value = module.firewall_http_redirect_sg
 }
 
-output "load_balancer_dns" {
-  value = module.load_balancer_dns
+output "load_balancer" {
+  value = module.load_balancer
+}
+
+output "dns" {
+  value = module.dns
 }
