@@ -50,6 +50,7 @@ module "firewall_http_redirect_sg" {
 module "load_balancer" {
   source                          = "../../modules/load_balancer"
   name                            = "${local.service}-${local.env}"
+  vpc_id                          = module.network.vpc_id
   subnet_public_ids               = module.network.subnet_public_ids
   http_security_group_id          = module.firewall_http_sg.security_group_id
   https_security_group_id         = module.firewall_https_sg.security_group_id
