@@ -21,3 +21,7 @@ variable "http_redirect_security_group_id" {
 variable "alb_log_bucket_id" {
   type = string
 }
+
+variable "acm_certificate_arn" {
+  type = string
+}

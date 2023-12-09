@@ -55,6 +55,7 @@ module "load_balancer" {
   https_security_group_id         = module.firewall_https_sg.security_group_id
   http_redirect_security_group_id = module.firewall_http_redirect_sg.security_group_id
   alb_log_bucket_id               = module.storage.alb_log_bucket_id
+  acm_certificate_arn             = module.dns.acm_certificate_arn
 }
 
 module "dns" {
