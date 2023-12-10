@@ -1,3 +1,7 @@
+output "access_control_ecs" {
+  value = module.access_control_ecs
+}
+
 output "network" {
   value = module.network
 }
@@ -22,10 +26,18 @@ output "firewall_http_redirect_sg" {
   value = module.firewall_http_redirect_sg
 }
 
+output "firewall_nginx_sg" {
+  value = module.firewall_nginx_sg
+}
+
 output "load_balancer" {
   value = module.load_balancer
 }
 
 output "dns" {
   value = module.dns
+}
+
+output "container" {
+  value = module.container
 }

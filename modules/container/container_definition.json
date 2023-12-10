@@ -1,0 +1,13 @@
+[
+    {
+        "name": "terraform-aws-sample-dev",
+        "image": "nginx:latest",
+        "essential": true,
+        "portMappings": [
+            {
+                "protocol": "tcp",
+                "containerPort": 80
+            }
+        ]
+    }
+]
