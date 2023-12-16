@@ -45,3 +45,7 @@ output "container" {
 output "monitoring_ecs" {
   value = module.monitoring_ecs
 }
+
+output "encryption" {
+  value = module.encryption
+}

@@ -103,3 +103,8 @@ module "monitoring_ecs" {
   source = "../../modules/monitoring"
   name   = "ecs/${local.service}-${local.env}"
 }
+
+module "encryption" {
+  source = "../../modules/encryption"
+  name   = "${local.service}-${local.env}"
+}
