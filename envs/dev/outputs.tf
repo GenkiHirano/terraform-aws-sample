@@ -41,3 +41,7 @@ output "dns" {
 output "container" {
   value = module.container
 }
+
+output "monitoring_ecs" {
+  value = module.monitoring_ecs
+}
