@@ -71,6 +71,14 @@ module "firewall_nginx_sg" {
   security_group_cidr_block = local.security_group_cidr_block
 }
 
+module "firewall_rds_sg" {
+  source                    = "../../modules/firewall"
+  name                      = "${local.service}-${local.env}-rds-sg"
+  vpc_id                    = module.network.vpc_id
+  port                      = 3306
+  security_group_cidr_block = local.security_group_cidr_block
+}
+
 module "load_balancer" {
   source                          = "../../modules/load_balancer"
   name                            = "${local.service}-${local.env}"
@@ -107,4 +115,16 @@ module "monitoring_ecs" {
 module "encryption" {
   source = "../../modules/encryption"
   name   = "${local.service}-${local.env}"
+}
+
+module "setting_management" {
+  source = "../../modules/setting_management"
+}
+
+module "data_store" {
+  source             = "../../modules/data_store"
+  name               = "${local.service}-${local.env}"
+  subnet_private_ids = module.network.subnet_private_ids
+  security_group_id  = module.firewall_rds_sg.security_group_id
+  kms_key_arn        = module.encryption.aws_kms_key_arn
 }

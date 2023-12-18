@@ -30,6 +30,10 @@ output "firewall_nginx_sg" {
   value = module.firewall_nginx_sg
 }
 
+output "firewall_rds_sg" {
+  value = module.firewall_rds_sg
+}
+
 output "load_balancer" {
   value = module.load_balancer
 }
@@ -48,4 +52,12 @@ output "monitoring_ecs" {
 
 output "encryption" {
   value = module.encryption
+}
+
+output "setting_management" {
+  value = module.setting_management
+}
+
+output "data_store" {
+  value = module.data_store
 }
