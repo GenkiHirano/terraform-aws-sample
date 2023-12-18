@@ -56,7 +56,7 @@ resource "aws_db_instance" "this" {
   skip_final_snapshot    = true
   port                   = 3306
   apply_immediately      = false
-  vpc_security_group_ids = [var.security_group_id]
+  vpc_security_group_ids = [var.rds_security_group_id]
   parameter_group_name   = aws_db_parameter_group.this.name
   option_group_name      = aws_db_option_group.this.name
   db_subnet_group_name   = aws_db_subnet_group.this.name

@@ -79,6 +79,14 @@ module "firewall_rds_sg" {
   security_group_cidr_block = local.security_group_cidr_block
 }
 
+module "firewall_redis_sg" {
+  source                    = "../../modules/firewall"
+  name                      = "${local.service}-${local.env}-redis-sg"
+  vpc_id                    = module.network.vpc_id
+  port                      = 6379
+  security_group_cidr_block = local.security_group_cidr_block
+}
+
 module "load_balancer" {
   source                          = "../../modules/load_balancer"
   name                            = "${local.service}-${local.env}"
@@ -122,9 +130,10 @@ module "setting_management" {
 }
 
 module "data_store" {
-  source             = "../../modules/data_store"
-  name               = "${local.service}-${local.env}"
-  subnet_private_ids = module.network.subnet_private_ids
-  security_group_id  = module.firewall_rds_sg.security_group_id
-  kms_key_arn        = module.encryption.aws_kms_key_arn
+  source                  = "../../modules/data_store"
+  name                    = "${local.service}-${local.env}"
+  subnet_private_ids      = module.network.subnet_private_ids
+  rds_security_group_id   = module.firewall_rds_sg.security_group_id
+  redis_security_group_id = module.firewall_redis_sg.security_group_id
+  kms_key_arn             = module.encryption.aws_kms_key_arn
 }

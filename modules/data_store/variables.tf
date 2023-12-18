@@ -6,7 +6,11 @@ variable "subnet_private_ids" {
   type = list(string)
 }
 
-variable "security_group_id" {
+variable "rds_security_group_id" {
+  type = string
+}
+
+variable "redis_security_group_id" {
   type = string
 }
 
